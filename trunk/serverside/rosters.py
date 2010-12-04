@@ -19,7 +19,8 @@ def load_class(fn):
     out = {}
 
     for line in lines:
-      if line.strip().startswith("#"):
+      line = line.strip()
+      if line.startswith("#") or len(line) == 0:
         continue
       username, realname = line.strip().split(None,1)
       out[username] = realname
